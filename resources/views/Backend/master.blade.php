@@ -384,7 +384,7 @@
                 var link =$(this).attr('href');
                 Swal.fire({
                 title: 'Are you sure?',
-                text: "Remove These Product From Cart!",
+                text: "Remove Data!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',

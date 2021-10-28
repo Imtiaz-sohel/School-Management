@@ -75,6 +75,24 @@
             </ul>
         </li>
 
+        <li class="treeview @yield('year')">
+            <a href="{{ route('studentYearView') }}">
+            <i data-feather="message-circle"></i>
+            <span>Student Year</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-right pull-right"></i>
+            </span>
+            </a>
+            <ul class="treeview-menu">
+                <li class="@yield('v_year')">
+                    <a href="{{ route('studentYearView') }}"><i class="ti-more"></i>Year</a>
+                </li>
+                <li class="@yield('a_year')">
+                    <a href="{{ route('addYear') }}"><i class="ti-more"></i>Add Year</a>
+                </li>
+            </ul>
+        </li>
+
         <li class="header nav-small-cap">User Interface</li>
         <li class="treeview">
             <a href="#">

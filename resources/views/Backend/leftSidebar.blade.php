@@ -57,6 +57,24 @@
             </ul>
         </li>
 
+        <li class="treeview @yield('setup')">
+            <a href="{{ route('studentClass') }}">
+            <i data-feather="message-circle"></i>
+            <span>Setup Management</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-right pull-right"></i>
+            </span>
+            </a>
+            <ul class="treeview-menu">
+                <li class="@yield('class')">
+                    <a href="{{ route('studentClass') }}"><i class="ti-more"></i>Student Class</a>
+                </li>
+                <li class="@yield('a_class')">
+                    <a href="{{ route('addClass') }}"><i class="ti-more"></i>Add Student Class</a>
+                </li>
+            </ul>
+        </li>
+
         <li class="header nav-small-cap">User Interface</li>
         <li class="treeview">
             <a href="#">

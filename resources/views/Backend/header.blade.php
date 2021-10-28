@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="{{ asset('backend/css/vendors_css.css') }}" />
     <!-- Style-->
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
-    <link rel="stylesheet" href="{{ asset('backend/css/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('backend/css/skin_color.css') }}" />
+    <link rel="stylesheet" href="{{ asset('backend/css/style.css') }}" />
   </head>
   <body class="hold-transition dark-skin sidebar-mini theme-primary fixed">
     <div class="wrapper">

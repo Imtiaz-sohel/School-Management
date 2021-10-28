@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\Backend\Setup\StudentClassController;
 use App\Http\Controllers\Backend\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,5 +41,14 @@ Route::group(['prefix'=>'profile','auth'], function(){
     Route::post('/update',[ProfileController::class,'profileUpdate'])->name('profileUpdate');
     Route::get('/password-view',[ProfileController::class,'passwordView'])->name('passwordView');
     Route::post('/password-update',[ProfileController::class,'passwordUpdate'])->name('passwordUpdate');
+});
+// SETUP CONTROLLER STARTS
+Route::group(['prefix'=>'profile','auth'], function(){
+    Route::get('/student-setup',[StudentClassController::class,'studentClass'])->name('studentClass');
+    Route::get('/add-class',[StudentClassController::class,'addClass'])->name('addClass');
+    Route::post('/add-class-post',[StudentClassController::class,'addClassPost'])->name('addClassPost');
+    Route::get('/add-class-edit/{id}',[StudentClassController::class,'classEdit'])->name('classEdit');
+    Route::post('/add-class-update/{id}',[StudentClassController::class,'updateClass'])->name('updateClass');
+    Route::get('/delete-class/{id}',[StudentClassController::class,'classDelete'])->name('classDelete');
 });
 

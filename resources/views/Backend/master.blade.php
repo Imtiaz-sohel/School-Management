@@ -3,7 +3,7 @@
       <!-- Content Wrapper. Contains page content -->
       @yield('content')
       <!-- /.content-wrapper -->
-   @include('Backend.footer')      
+      @include('Backend.footer')      
 
       <!-- Control Sidebar -->
       <aside class="control-sidebar">

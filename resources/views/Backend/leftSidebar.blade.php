@@ -129,6 +129,42 @@
             </ul>
         </li>
 
+        <li class="treeview @yield('fee')">
+            <a href="{{ route('feeView') }}">
+            <i data-feather="message-circle"></i>
+            <span>Student Fee Catgory</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-right pull-right"></i>
+            </span>
+            </a>
+            <ul class="treeview-menu">
+                <li class="@yield('v_fee')">
+                    <a href="{{ route('feeView') }}"><i class="ti-more"></i>Fee Category View</a>
+                </li>
+                <li class="@yield('a_fee')">
+                    <a href="{{ route('feeAdd') }}"><i class="ti-more"></i>Fee Category Add</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="treeview @yield('feeAmount')">
+            <a href="{{ route('feeAmountView') }}">
+            <i data-feather="message-circle"></i>
+            <span>Student Fee Amount</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-right pull-right"></i>
+            </span>
+            </a>
+            <ul class="treeview-menu">
+                <li class="@yield('v_amount')">
+                    <a href="{{ route('feeAmountView') }}"><i class="ti-more"></i>Fee Amount View</a>
+                </li>
+                <li class="@yield('a_amount')">
+                    <a href="{{ route('feeAmountAdd') }}"><i class="ti-more"></i>Fee Amount Amount Add</a>
+                </li>
+            </ul>
+        </li>
+
         <li class="header nav-small-cap">User Interface</li>
         <li class="treeview">
             <a href="#">

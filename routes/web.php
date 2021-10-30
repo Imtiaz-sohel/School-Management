@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\Backend\Setup\FeeAmountController;
+use App\Http\Controllers\Backend\Setup\FeeCategoryController;
 use App\Http\Controllers\Backend\Setup\StudentClassController;
 use App\Http\Controllers\Backend\Setup\StudentGroupController;
 use App\Http\Controllers\Backend\Setup\StudentShiftController;
@@ -83,6 +85,24 @@ Route::group(['prefix'=>'shift','auth'],function(){
     Route::get('/edit/{id}',[StudentShiftController::class,'shiftEdit'])->name('shiftEdit');
     Route::post('/update/{id}',[StudentShiftController::class,'updateShift'])->name('updateShift');
     Route::get('/delete/{id}',[StudentShiftController::class,'shiftDelete'])->name('shiftDelete');
+});
+
+// STUDENT FEE CATEGORY CONTROLLER STARTS
+Route::group(['prefix'=>'fee-category','auth'],function(){
+    Route::get('/view',[FeeCategoryController::class,'feeView'])->name('feeView');
+    Route::get('/add',[FeeCategoryController::class,'feeAdd'])->name('feeAdd');
+    Route::post('/post',[FeeCategoryController::class,'addFeePost'])->name('addFeePost');
+    Route::get('/edit/{id}',[FeeCategoryController::class,'feeEdit'])->name('feeEdit');
+    Route::post('/update-post/{id}',[FeeCategoryController::class,'updateFee'])->name('updateFee');
+    Route::get('/delete/{id}',[FeeCategoryController::class,'feeDelete'])->name('feeDelete');
+});
+// FEE AMOUNT CONTROLLER STARTS
+Route::group(['prefix'=>'fee-amount','auth'],function(){
+    Route::get('/view',[FeeAmountController::class,'feeAmountView'])->name('feeAmountView');
+    Route::get('/add',[FeeAmountController::class,'feeAmountAdd'])->name('feeAmountAdd');
+    Route::post('/add-post',[FeeAmountController::class,'feeAmountPost'])->name('feeAmountPost');
+    Route::get('/delete/{id}',[FeeAmountController::class,'feeDelete'])->name('feeDelete');
+    Route::get('/edit/{id}',[FeeAmountController::class,'feeAmountEdit'])->name('feeAmountEdit');
 });
 
 

@@ -93,6 +93,42 @@
             </ul>
         </li>
 
+        <li class="treeview @yield('group')">
+            <a href="{{ route('studentYearView') }}">
+            <i data-feather="message-circle"></i>
+            <span>Student Group</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-right pull-right"></i>
+            </span>
+            </a>
+            <ul class="treeview-menu">
+                <li class="@yield('v_group')">
+                    <a href="{{ route('studentGroupView') }}"><i class="ti-more"></i>Group view</a>
+                </li>
+                <li class="@yield('a_group')">
+                    <a href="{{ route('groupAdd') }}"><i class="ti-more"></i>Group Add</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="treeview @yield('shift')">
+            <a href="{{ route('shiftView') }}">
+            <i data-feather="message-circle"></i>
+            <span>Student Shift</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-right pull-right"></i>
+            </span>
+            </a>
+            <ul class="treeview-menu">
+                <li class="@yield('v_shift')">
+                    <a href="{{ route('shiftView') }}"><i class="ti-more"></i>Shift View</a>
+                </li>
+                <li class="@yield('a_shift')">
+                    <a href="{{ route('shiftAdd') }}"><i class="ti-more"></i>Shift Add</a>
+                </li>
+            </ul>
+        </li>
+
         <li class="header nav-small-cap">User Interface</li>
         <li class="treeview">
             <a href="#">

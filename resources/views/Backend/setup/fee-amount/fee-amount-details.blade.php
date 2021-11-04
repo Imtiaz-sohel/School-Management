@@ -30,8 +30,7 @@
             <div class="col-12">
                 <div class="box">
                    <div class="box-header with-border">
-                       <h3 class="box-title">All Fee Amount</h3>
-                       <a style="float: right" href="{{ route('feeAmountAdd') }}" class="btn btn-rounded btn-success mb-5">Add Fee</a>
+                       <h3 class="box-title">{{ $feeDetails[0]->feeCategory->fee_name }}</h3>
                    </div>
                    <!-- /.box-header -->
                    <div class="box-body">
@@ -40,22 +39,18 @@
                            <thead>
                                <tr>
                                    <th>Sl</th>
-                                   <th>Fee Category</th>
-                                   <th>Action</th>
+                                   <th>Class Name</th>
+                                   <th>Amount</th>
                                </tr>
                            </thead>
-                           <tbody>
-                               @foreach($fees as $key => $fee)                                   
+                           <tbody> 
+                               @foreach($feeDetails as $key => $detail)                                   
                                <tr>
                                    <td>{{ ++$key }}</td>
-                                   <td>{{ $fee->feeCategory->fee_name??"" }}</td>
-                                   <td>
-                                       <a class="btn btn-outline-info" href="{{ route('feeAmountEdit',$fee->fee_categories_id) }}"><i class="fa fa-edit"></i></a>
-                                       <a class="btn btn-outline-success" href="{{ route('feeDetails',$fee->fee_categories_id) }}"><i class="fa fa-eye" aria-hidden="true"></i>
-                                       </a>
-                                   </td>
+                                   <td>{{ $detail->studentClass->name }}</td>
+                                   <td>{{ $detail->amount }}</td>
                                </tr>
-                               @endforeach
+                               @endforeach                                
                            </tbody>
                          </table>
                        </div>

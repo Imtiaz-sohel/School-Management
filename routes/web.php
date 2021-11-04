@@ -101,9 +101,11 @@ Route::group(['prefix'=>'fee-amount','auth'],function(){
     Route::get('/view',[FeeAmountController::class,'feeAmountView'])->name('feeAmountView');
     Route::get('/add',[FeeAmountController::class,'feeAmountAdd'])->name('feeAmountAdd');
     Route::post('/add-post',[FeeAmountController::class,'feeAmountPost'])->name('feeAmountPost');
-    Route::get('/delete/{id}',[FeeAmountController::class,'feeDelete'])->name('feeDelete');
-    Route::get('/edit/{id}',[FeeAmountController::class,'feeAmountEdit'])->name('feeAmountEdit');
+    Route::get('/edit/{fee_categories_id}',[FeeAmountController::class,'feeAmountEdit'])->name('feeAmountEdit');
+    Route::post('/update-post/{fee_categories_id}',[FeeAmountController::class,'updateAmountPost'])->name('updateAmountPost');
+    Route::get('/fee-details/{fee_categories_id}',[FeeAmountController::class,'feeDetails'])->name('feeDetails');
 });
+
 
 
 

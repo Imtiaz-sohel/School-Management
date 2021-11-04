@@ -35,7 +35,7 @@
               <div class="box-body">
                 <div class="row">
                   <div class="col">
-                    <form action="{{ route('feeAmountPost') }}" method="POST">
+                    <form action="{{ route('updateAmountPost',$feeEdit[0]->fee_categories_id) }}" method="POST">
                       @csrf
                       <div class="row">
                         <div class="col-12">
@@ -45,7 +45,7 @@
                                 <select name="fee_categories_id" id="fee_categories_id" class="form-control @error('fee_categories_id') is-inavlid @enderror">
                                     <option selected disabled value>Select Fee Category</option>
                                     @foreach($feeCategories as $key => $feeCategory)
-                                        <option @if ($amountEdit->fee_categories_id==$feeCategory->id) selected @endif value="{{ $feeCategory->id }}">{{ $feeCategory->fee_name }}</option>
+                                        <option @if ($feeEdit[0]->fee_categories_id==$feeCategory->id) selected @endif value="{{ $feeCategory->id }}">{{ $feeCategory->fee_name }}</option>
                                     @endforeach
                                 </select>
                               @error('fee_categories_id')
@@ -57,8 +57,7 @@
                           </div>					
                         </div>
                       </div>
-
-
+                      @foreach($feeEdit as $key => $edit)                        
                       <div class="customer_records">
                         <div class="row">
                           <div class="col-md-5">
@@ -67,24 +66,33 @@
                              <select name="student_classses_id[] " id="student_classses_id" class="form-control @error('student_classses_id') is-inavlid @enderror">
                                <option selected disabled value>Select One</option>
                                @foreach($classes as $key => $class)
-                                 <option value="{{ $class->id }}">{{ $class->name }}</option>
+                                 <option @if($edit->student_classses_id==$class->id) selected @endif value="{{ $class->id }}">{{ $class->name }}</option>
                                @endforeach
                              </select>
+                             @error('student_classses_id')
+                               <div class="text-danger">
+                                 {{ $message }}
+                               </div>
+                             @enderror
                             </div>
                           </div>
                           <div class="col-md-5">
                             <div class="form-group">
                               <h5>Enter Amount<span class="text-danger">*</span></h5>
-                              <input type="text" name="amount[]" id="amount" class="form-control @error('amount') is-inavlid @enderror">
+                              <input type="text" name="amount[]" value="{{ $edit->amount }}" id="amount" class="form-control @error('amount') is-inavlid @enderror">
+                              @error('amount')
+                                <div class="text-danger">
+                                  {{ $message }}
+                                </div>
+                              @enderror
                             </div>
                           </div>
                         </div>
                       </div>
-
-                      
+                      @endforeach
                       <div class="customer_records_dynamic"></div>
                       <div class="text-xs-right">
-                        <input type="submit" class="btn btn-rounded btn-info" value="submit">
+                        <input type="submit" class="btn btn-rounded btn-info" value="Update">
                       </div>
                     </form>
                   </div>

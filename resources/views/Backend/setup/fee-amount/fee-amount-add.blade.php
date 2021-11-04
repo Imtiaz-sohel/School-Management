@@ -68,6 +68,11 @@
                                  <option value="{{ $class->id }}">{{ $class->name }}</option>
                                @endforeach
                              </select>
+                             @error('student_classses_id')
+                               <div class="text-danger">
+                                 {{ $message }}
+                               </div>
+                             @enderror
                             </div>
                           </div>
                           <div class="col-md-5">
@@ -75,6 +80,11 @@
                               <h5>Enter Amount<span class="text-danger">*</span></h5>
                               <input type="text" name="amount[]" id="amount" class="form-control @error('amount') is-inavlid @enderror">
                             </div>
+                            @error('amount')
+                              <div class="text-danger">
+                                {{ $message }}
+                              </div>
+                            @enderror
                           </div>
                           <div class="col-md-2" style="padding-top: 25px">
                             <a class="extra-fields-customer btn btn-success" href="#"><i class="fa fa-plus-circle"></i></a>

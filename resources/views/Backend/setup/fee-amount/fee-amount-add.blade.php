@@ -26,85 +26,85 @@
 				</div>
 			</div>
 		</div>
-        <section class="content">
-            <div class="box">
-              <div class="box-header with-border">
-                <h4 class="box-title">Add Fee Amount</h4>
-            </div>
-            <!-- /.box-header -->
-              <div class="box-body">
-                <div class="row">
-                  <div class="col">
-                    <form action="{{ route('feeAmountPost') }}" method="POST">
-                      @csrf
-                      <div class="row">
-                        <div class="col-12">
-                          <div class="form-group">
-                            <h5>Select Fee Category<span class="text-danger">*</span></h5>
-                            <div class="controls">
-                                <select name="fee_categories_id" id="fee_categories_id" class="form-control @error('fee_categories_id') is-inavlid @enderror">
-                                    <option selected disabled value>Select Fee Category</option>
-                                    @foreach($feeCategories as $key => $feeCategory)
-                                        <option value="{{ $feeCategory->id }}">{{ $feeCategory->fee_name }}</option>
-                                    @endforeach
-                                </select>
-                              @error('fee_categories_id')
-                                  <div class="text-danger">
-                                      {{ $message }}
-                                  </div>
-                              @enderror
-                            </div>
-                          </div>					
-                        </div>
-                      </div>
-                      <div class="customer_records">
-                        <div class="row">
-                          <div class="col-md-5">
-                            <div class="form-group">
-                              <h5>Select Class<span class="text-danger">*</span></h5>
-                             <select name="student_classses_id[] " id="student_classses_id" class="form-control @error('student_classses_id') is-inavlid @enderror">
-                               <option selected disabled value>Select One</option>
-                               @foreach($classes as $key => $class)
-                                 <option value="{{ $class->id }}">{{ $class->name }}</option>
-                               @endforeach
-                             </select>
-                             @error('student_classses_id')
-                               <div class="text-danger">
-                                 {{ $message }}
-                               </div>
-                             @enderror
-                            </div>
+      <section class="content">
+          <div class="box">
+            <div class="box-header with-border">
+              <h4 class="box-title">Add Fee Amount</h4>
+          </div>
+          <!-- /.box-header -->
+            <div class="box-body">
+              <div class="row">
+                <div class="col">
+                  <form action="{{ route('feeAmountPost') }}" method="POST">
+                    @csrf
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <h5>Select Fee Category<span class="text-danger">*</span></h5>
+                          <div class="controls">
+                              <select name="fee_categories_id" id="fee_categories_id" class="form-control @error('fee_categories_id') is-inavlid @enderror">
+                                  <option selected disabled value>Select Fee Category</option>
+                                  @foreach($feeCategories as $key => $feeCategory)
+                                      <option value="{{ $feeCategory->id }}">{{ $feeCategory->fee_name }}</option>
+                                  @endforeach
+                              </select>
+                            @error('fee_categories_id')
+                                <div class="text-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                           </div>
-                          <div class="col-md-5">
-                            <div class="form-group">
-                              <h5>Enter Amount<span class="text-danger">*</span></h5>
-                              <input type="text" name="amount[]" id="amount" class="form-control @error('amount') is-inavlid @enderror">
-                            </div>
-                            @error('amount')
+                        </div>					
+                      </div>
+                    </div>
+                    <div class="customer_records">
+                      <div class="row">
+                        <div class="col-md-5">
+                          <div class="form-group">
+                            <h5>Select Class<span class="text-danger">*</span></h5>
+                            <select name="student_classses_id[] " id="student_classses_id" class="form-control @error('student_classses_id') is-inavlid @enderror">
+                              <option selected disabled value>Select One</option>
+                              @foreach($classes as $key => $class)
+                                <option value="{{ $class->id }}">{{ $class->name }}</option>
+                              @endforeach
+                            </select>
+                            @error('student_classses_id')
                               <div class="text-danger">
                                 {{ $message }}
                               </div>
                             @enderror
                           </div>
-                          <div class="col-md-2" style="padding-top: 25px">
-                            <a class="extra-fields-customer btn btn-success" href="#"><i class="fa fa-plus-circle"></i></a>
+                        </div>
+                        <div class="col-md-5">
+                          <div class="form-group">
+                            <h5>Enter Amount<span class="text-danger">*</span></h5>
+                            <input type="text" name="amount[]" id="amount" class="form-control @error('amount') is-inavlid @enderror">
                           </div>
+                          @error('amount')
+                            <div class="text-danger">
+                              {{ $message }}
+                            </div>
+                          @enderror
+                        </div>
+                        <div class="col-md-2" style="padding-top: 25px">
+                          <a class="extra-fields-customer btn btn-success" href="#"><i class="fa fa-plus-circle"></i></a>
                         </div>
                       </div>
-                      <div class="customer_records_dynamic"></div>
-                      <div class="text-xs-right">
-                        <input type="submit" class="btn btn-rounded btn-info" value="submit">
-                      </div>
-                    </form>
-                  </div>
-                  <!-- /.col -->
+                    </div>
+                    <div class="customer_records_dynamic"></div>
+                    <div class="text-xs-right">
+                      <input type="submit" class="btn btn-rounded btn-info" value="submit">
+                    </div>
+                  </form>
                 </div>
-                <!-- /.row -->
+                <!-- /.col -->
               </div>
-            <!-- /.box-body -->
+              <!-- /.row -->
             </div>
-            <!-- /.box -->
-        </section>
+          <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+      </section>
     </div>
 </div>
 @endsection

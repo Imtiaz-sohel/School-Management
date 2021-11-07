@@ -1,13 +1,16 @@
 <?php
 
 use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\Backend\Setup\ExtamtypeController;
 use App\Http\Controllers\Backend\Setup\FeeAmountController;
 use App\Http\Controllers\Backend\Setup\FeeCategoryController;
 use App\Http\Controllers\Backend\Setup\StudentClassController;
 use App\Http\Controllers\Backend\Setup\StudentGroupController;
 use App\Http\Controllers\Backend\Setup\StudentShiftController;
+use App\Http\Controllers\Backend\Setup\StudentSubjectController;
 use App\Http\Controllers\Backend\Setup\StudentYearController;
 use App\Http\Controllers\Backend\UserController;
+use App\Models\StudentSubject;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -104,6 +107,26 @@ Route::group(['prefix'=>'fee-amount','auth'],function(){
     Route::get('/edit/{fee_categories_id}',[FeeAmountController::class,'feeAmountEdit'])->name('feeAmountEdit');
     Route::post('/update-post/{fee_categories_id}',[FeeAmountController::class,'updateAmountPost'])->name('updateAmountPost');
     Route::get('/fee-details/{fee_categories_id}',[FeeAmountController::class,'feeDetails'])->name('feeDetails');
+});
+
+// EXAM TYPE CONTROLLER STARTS
+Route::group(['prefix'=>'exam-type','auth'],function(){
+    Route::get('/view',[ExtamtypeController::class,'examTypeView'])->name('examTypeView');
+    Route::get('/add',[ExtamtypeController::class,'examTypeAdd'])->name('examTypeAdd');
+    Route::post('/add-post',[ExtamtypeController::class,'addExamPost'])->name('addExamPost');
+    Route::get('/delete/{exam_id}',[ExtamtypeController::class,'examTypeDelete'])->name('examTypeDelete');
+    Route::get('/edit/{exam_id}',[ExtamtypeController::class,'examTypeEdit'])->name('examTypeEdit');
+    Route::post('/update-post/{exam_id}',[ExtamtypeController::class,'ExamUpdatePost'])->name('ExamUpdatePost');
+});
+
+// STUDENT SUBJECT CONTROLLER STARTS
+Route::group(['prefix'=>'subject','auth'],function(){
+    Route::get('/view',[StudentSubjectController::class,'subjectView'])->name('subjectView');
+    Route::get('/add',[StudentSubjectController::class,'subjectAdd'])->name('subjectAdd');
+    Route::post('/add-post',[StudentSubjectController::class,'addSubjectPost'])->name('addSubjectPost');
+    Route::get('/edit/{subject_id}',[StudentSubjectController::class,'subjectEdit'])->name('subjectEdit');
+    Route::post('/update/{subject_id}',[StudentSubjectController::class,'updateSubjectPost'])->name('updateSubjectPost');
+    Route::get('/delete/{subject_id}',[StudentSubjectController::class,'subjectDelete'])->name('subjectDelete');
 });
 
 

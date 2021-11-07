@@ -165,6 +165,42 @@
             </ul>
         </li>
 
+        <li class="treeview @yield('examtype')">
+            <a href="{{ route('examTypeView') }}">
+            <i data-feather="message-circle"></i>
+            <span>Exam Type</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-right pull-right"></i>
+            </span>
+            </a>
+            <ul class="treeview-menu">
+                <li class="@yield('v_examtype')">
+                    <a href="{{ route('examTypeView') }}"><i class="ti-more"></i>Exam Type View</a>
+                </li>
+                <li class="@yield('a_examtype')">
+                    <a href="{{ route('examTypeAdd') }}"><i class="ti-more"></i>Exam Type Add</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="treeview @yield('subject')">
+            <a href="{{ route('subjectView') }}">
+            <i data-feather="message-circle"></i>
+            <span>Student Subject</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-right pull-right"></i>
+            </span>
+            </a>
+            <ul class="treeview-menu">
+                <li class="@yield('v_subject')">
+                    <a href="{{ route('subjectView') }}"><i class="ti-more"></i>Subject View</a>
+                </li>
+                <li class="@yield('a_subject')">
+                    <a href="{{ route('subjectAdd') }}"><i class="ti-more"></i>Subject Add</a>
+                </li>
+            </ul>
+        </li>
+
         <li class="header nav-small-cap">User Interface</li>
         <li class="treeview">
             <a href="#">

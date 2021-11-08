@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\Backend\Setup\AssignSubjectController;
 use App\Http\Controllers\Backend\Setup\ExtamtypeController;
 use App\Http\Controllers\Backend\Setup\FeeAmountController;
 use App\Http\Controllers\Backend\Setup\FeeCategoryController;
@@ -128,6 +129,19 @@ Route::group(['prefix'=>'subject','auth'],function(){
     Route::post('/update/{subject_id}',[StudentSubjectController::class,'updateSubjectPost'])->name('updateSubjectPost');
     Route::get('/delete/{subject_id}',[StudentSubjectController::class,'subjectDelete'])->name('subjectDelete');
 });
+
+// ASSIGN SUBJECTCONTROLLER STARTS
+Route::group(['prefix'=>'assign-subject','auth'],function(){
+    Route::get('/view',[AssignSubjectController::class,'assignsubjectView'])->name('assignsubjectView');
+    Route::get('/add',[AssignSubjectController::class,'assignsubjectAdd'])->name('assignsubjectAdd');
+    Route::post('/add-post',[AssignSubjectController::class,'assignSubjectPost'])->name('assignSubjectPost');
+    Route::get('/details/{class_id}',[AssignSubjectController::class,'assignSubjectDetails'])->name('assignSubjectDetails');
+    Route::get('/edit/{class_id}',[AssignSubjectController::class,'assignSubjectEdit'])->name('assignSubjectEdit');
+    Route::get('/delete/{class_id}',[AssignSubjectController::class,'assignSubjectDelete'])->name('assignSubjectDelete');
+    Route::post('/update/{class_id}',[AssignSubjectController::class,'assignSubjectUpdate'])->name('assignSubjectUpdate');
+});
+
+
 
 
 

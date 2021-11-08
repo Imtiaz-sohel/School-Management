@@ -35,7 +35,7 @@
               <div class="box-body">
                 <div class="row">
                   <div class="col">
-                    <form action="{{ route('updateAmountPost',$feeEdit[0]->fee_categories_id) }}" method="POST">
+                    <form action="{{ route('updateAmountPost',$feeEdit->fee_categories_id) }}" method="POST">
                       @csrf
                       <div class="row">
                         <div class="col-12">

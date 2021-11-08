@@ -14,7 +14,7 @@
         </div>
         </div>
         <!-- sidebar menu-->
-        <ul class="sidebar-menu" data-widget="tree">
+    <ul class="sidebar-menu" data-widget="tree" id="scroll">
         <li class="@yield('dashbaord')">
             <a href="{{ route('dashboard') }}">
             <i data-feather="pie-chart"></i>
@@ -201,57 +201,28 @@
             </ul>
         </li>
 
-        <li class="header nav-small-cap">User Interface</li>
-        <li class="treeview">
-            <a href="#">
-            <i data-feather="grid"></i>
-            <span>Components</span>
+        <li class="treeview @yield('assignSubject')">
+            <a href="{{ route('assignsubjectView') }}">
+            <i data-feather="message-circle"></i>
+            <span>Assign Subject</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-right pull-right"></i>
             </span>
             </a>
             <ul class="treeview-menu">
-            <li>
-                <a href="components_alerts.html"
-                ><i class="ti-more"></i>Alerts</a
-                >
-            </li>
-            <li>
-                <a href="components_badges.html"
-                ><i class="ti-more"></i>Badge</a>
-            </li>
+                <li class="@yield('v_assignsubject')">
+                    <a href="{{ route('assignsubjectView') }}"><i class="ti-more"></i>Assign Subject View</a>
+                </li>
+                <li class="@yield('a_assignsubject')">
+                    <a href="{{ route('assignsubjectAdd') }}"><i class="ti-more"></i>Assign Subject Add</a>
+                </li>
             </ul>
         </li>
-        </ul>
-    </section>
-    <div class="sidebar-footer">
-        <!-- item-->
-        <a
-        href="javascript:void(0)"
-        class="link"
-        data-toggle="tooltip"
-        title=""
-        data-original-title="Settings"
-        aria-describedby="tooltip92529"
-        ><i class="ti-settings"></i
-        ></a>
-        <!-- item-->
-        <a
-        href="mailbox_inbox.html"
-        class="link"
-        data-toggle="tooltip"
-        title=""
-        data-original-title="Email"
-        ><i class="ti-email"></i
-        ></a>
-        <!-- item-->
-        <a
-        href="javascript:void(0)"
-        class="link"
-        data-toggle="tooltip"
-        title=""
-        data-original-title="Logout"
-        ><i class="ti-lock"></i
-        ></a>
-    </div>
+
+
+
+
+
+
+    </ul>
     </aside>

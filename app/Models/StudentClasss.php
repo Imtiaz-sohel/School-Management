@@ -12,4 +12,8 @@ class StudentClasss extends Model
     function amount(){
         return $this->hasMany(FeeAmount::class,'student_classses_id');
     }
+
+    function assignSubject(){
+        return $this->hasMany(AssignSubject::class,'class_id');
+    }
 }

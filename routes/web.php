@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\Setup\AssignSubjectController;
+use App\Http\Controllers\Backend\Setup\DegisnationController;
 use App\Http\Controllers\Backend\Setup\ExtamtypeController;
 use App\Http\Controllers\Backend\Setup\FeeAmountController;
 use App\Http\Controllers\Backend\Setup\FeeCategoryController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\Backend\Setup\StudentShiftController;
 use App\Http\Controllers\Backend\Setup\StudentSubjectController;
 use App\Http\Controllers\Backend\Setup\StudentYearController;
 use App\Http\Controllers\Backend\UserController;
+use App\Models\Degisnation;
 use App\Models\StudentSubject;
 use Illuminate\Support\Facades\Route;
 
@@ -139,6 +141,15 @@ Route::group(['prefix'=>'assign-subject','auth'],function(){
     Route::get('/edit/{class_id}',[AssignSubjectController::class,'assignSubjectEdit'])->name('assignSubjectEdit');
     Route::get('/delete/{class_id}',[AssignSubjectController::class,'assignSubjectDelete'])->name('assignSubjectDelete');
     Route::post('/update/{class_id}',[AssignSubjectController::class,'assignSubjectUpdate'])->name('assignSubjectUpdate');
+});
+// DEGISNATION CONTROLLER STARTS
+Route::group(['prefix'=>'degisnation','auth'],function(){
+    Route::get('/view',[DegisnationController::class,'degisnationView'])->name('degisnationView');
+    Route::get('/add',[DegisnationController::class,'degisnationAdd'])->name('degisnationAdd');
+    Route::post('/post',[DegisnationController::class,'addDesignationPost'])->name('addDesignationPost');
+    Route::get('/delete/{id}',[DegisnationController::class,'deleteDesignation'])->name('deleteDesignation');
+    Route::get('/edit/{id}',[DegisnationController::class,'editDesignation'])->name('editDesignation');
+    Route::post('/update/{id}',[DegisnationController::class,'designationUpdatePost'])->name('designationUpdatePost');
 });
 
 

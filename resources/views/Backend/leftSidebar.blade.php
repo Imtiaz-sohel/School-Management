@@ -60,14 +60,14 @@
         <li class="treeview @yield('setup')">
             <a href="{{ route('studentClass') }}">
             <i data-feather="message-circle"></i>
-            <span>Setup Management</span>
+            <span>Student Class</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-right pull-right"></i>
             </span>
             </a>
             <ul class="treeview-menu">
                 <li class="@yield('class')">
-                    <a href="{{ route('studentClass') }}"><i class="ti-more"></i>Student Class</a>
+                    <a href="{{ route('studentClass') }}"><i class="ti-more"></i> View Student Class</a>
                 </li>
                 <li class="@yield('a_class')">
                     <a href="{{ route('addClass') }}"><i class="ti-more"></i>Add Student Class</a>
@@ -218,6 +218,26 @@
                 </li>
             </ul>
         </li>
+
+        <li class="treeview @yield('degination')">
+            <a href="{{ route('degisnationView') }}">
+            <i data-feather="message-circle"></i>
+            <span>Employee Designation</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-right pull-right"></i>
+            </span>
+            </a>
+            <ul class="treeview-menu">
+                <li class="@yield('v_degination')">
+                    <a href="{{ route('degisnationView') }}"><i class="ti-more"></i>Designation View</a>
+                </li>
+                <li class="@yield('a_degination')">
+                    <a href="{{ route('degisnationAdd') }}"><i class="ti-more"></i>Designation Add</a>
+                </li>
+            </ul>
+        </li>
+
+
 
 
 

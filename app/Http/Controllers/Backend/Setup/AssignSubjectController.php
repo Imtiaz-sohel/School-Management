@@ -100,24 +100,4 @@ class AssignSubjectController extends Controller{
         );
         return redirect()->route('assignsubjectView')->with($notify);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

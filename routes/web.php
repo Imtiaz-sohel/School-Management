@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\Setup\StudentGroupController;
 use App\Http\Controllers\Backend\Setup\StudentShiftController;
 use App\Http\Controllers\Backend\Setup\StudentSubjectController;
 use App\Http\Controllers\Backend\Setup\StudentYearController;
+use App\Http\Controllers\Backend\Student\StudentRegController;
 use App\Http\Controllers\Backend\UserController;
 use App\Models\Degisnation;
 use App\Models\StudentSubject;
@@ -151,7 +152,12 @@ Route::group(['prefix'=>'degisnation','auth'],function(){
     Route::get('/edit/{id}',[DegisnationController::class,'editDesignation'])->name('editDesignation');
     Route::post('/update/{id}',[DegisnationController::class,'designationUpdatePost'])->name('designationUpdatePost');
 });
-
+// STUDENT REGISTRTION CONTROLLER STARTS
+Route::group(['prefix'=>'student','auth'],function(){
+    Route::get('/view',[StudentRegController::class,'viewregistration'])->name('viewregistration');
+    Route::get('/add',[StudentRegController::class,'addStudent'])->name('addStudent');
+    Route::get('/add-post',[StudentRegController::class,'addStudentPost'])->name('addStudentPost');
+});
 
 
 

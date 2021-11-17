@@ -38,24 +38,25 @@
                 </li>
             </ul>
         </li>
-
-        <li class="treeview @yield('profile')">
-            <a href="{{ route('profile') }}">
-            <i data-feather="message-circle"></i>
-            <span>Manage Profile</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-right pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-                <li class="@yield('y_profile')">
-                    <a href="{{ route('profile') }}"><i class="ti-more"></i>Your Profile</a>
-                </li>
-                <li class="@yield('c_profile')">
-                    <a href="{{ route('passwordView') }}"><i class="ti-more"></i>Change Password</a>
-                </li>
-            </ul>
-        </li>
+       @if(Auth::user()->role=='Admin')           
+       <li class="treeview @yield('profile')">
+           <a href="{{ route('profile') }}">
+           <i data-feather="message-circle"></i>
+           <span>Manage Profile</span>
+           <span class="pull-right-container">
+               <i class="fa fa-angle-right pull-right"></i>
+           </span>
+           </a>
+           <ul class="treeview-menu">
+               <li class="@yield('y_profile')">
+                   <a href="{{ route('profile') }}"><i class="ti-more"></i>Your Profile</a>
+               </li>
+               <li class="@yield('c_profile')">
+                   <a href="{{ route('passwordView') }}"><i class="ti-more"></i>Change Password</a>
+               </li>
+           </ul>
+       </li>
+       @endif
 
         <li class="treeview @yield('setup')">
             <a href="{{ route('studentClass') }}">
@@ -233,6 +234,22 @@
                 </li>
                 <li class="@yield('a_degination')">
                     <a href="{{ route('degisnationAdd') }}"><i class="ti-more"></i>Designation Add</a>
+                </li>
+            </ul>
+        </li>
+
+
+        <li class="treeview @yield('registration')">
+            <a href="#">
+            <i data-feather="message-circle"></i>
+            <span>Student Management</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-right pull-right"></i>
+            </span>
+            </a>
+            <ul class="treeview-menu">
+                <li class="@yield('v_registration')">
+                    <a href="{{ route('viewregistration') }}"><i class="ti-more"></i>Student Registration</a>
                 </li>
             </ul>
         </li>
